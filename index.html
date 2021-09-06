@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Super tic-tac-toe</title>
+</head>
+
+<body>
+	<canvas width="400" height="400" id="canvas"></canvas>
+	<form>
+		<br>
+		<label>Game mode</label>
+		<div>
+			<input name="mode" value="1" checked type="radio">1 Player (Vs AI)</input><br>
+			<input name="mode" value="2" type="radio">2 Players (Local)</input><br>
+			<input name="mode" value="3" type="radio">2 Players (Multiplayer)</input><br>
+		</div>
+		<br>
+		<label>Board Size</label>
+		<div>
+			<select id="boardSize">
+				<option value="3">3x3</option>
+				<option value="4">4x4</option>
+				<option value="5">5x5</option>
+				<option value="6">6x6</option>
+				<option value="7">7x7</option>
+				<option value="8">8x8</option>
+				<option value="9">9x9</option>
+				<option value="10">10x10</option>
+			</select>
+		</div>
+	</form>
+</body>
+<script type="module" src="./js/tiktoktoe.js"></script>
+</html>
