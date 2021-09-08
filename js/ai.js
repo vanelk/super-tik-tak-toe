@@ -1,18 +1,20 @@
 import { TURN_SYMBOLS, TILES_PER_LINE } from "./consts.js"
-const MAX_DEPTH = 6;
+import { map } from "./utils.js";
+var MAX_DEPTH = 7;
 var player, ai;
 export function aiMove(b, turn) {
     let best = -Infinity;
     let move = {};
     ai = turn;
     player = (turn + 1) % TURN_SYMBOLS.length;
+    let depth = Math.floor(map(TILES_PER_LINE, 3, 10, MAX_DEPTH, 2));
     for (let i = 0; i < b.board.length; i++) {
         if (TURN_SYMBOLS.indexOf(b.board[i]) == -1) {
             let _b = b.copy();
             let col = i % TILES_PER_LINE;
             let row = i / TILES_PER_LINE | 0;
             _b.play(col, row, turn);
-            let score = _minimax(_b, MAX_DEPTH, -Infinity, Infinity, false);
+            let score = _minimax(_b,  depth, -Infinity, Infinity, false);
             if (score > best) {
                 move = { col, row };
                 best = score;

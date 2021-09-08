@@ -6,7 +6,6 @@ An implementation of the tik-tak-toe game on an n by n board.
 - An O(n) check for winner.
 ## Coming Soon.
 - Online Mode.
-- AI Difficulty Tunning.
 - Improved User Interface.
 ## Demo
 [Comming soon](https://vanelk.github.io/super-tik-tak-toe/)

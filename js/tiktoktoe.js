@@ -1,7 +1,8 @@
-import { TILE_W, TILE_H, TURN_SYMBOLS, resizeBoard } from './consts.js';
+import { TILE_W, TILE_H, TURN_SYMBOLS, resizeBoard, TILES_PER_LINE } from './consts.js';
 import { Board } from './board.js';
 import { aiMove } from './ai.js';
 import { drawBoard, updateBoard } from './draw.js';
+import { ceil } from './utils.js';
 /**
  * Game mode game 
  * 1 = 1 player
@@ -29,8 +30,8 @@ Array.from(gm).forEach((elem) => {
 
 
 canvas.addEventListener('click', (ev) => {
-	let col = Math.floor(ev.x / TILE_W);
-	let row = Math.floor(ev.y / TILE_H);
+	let col = ceil(Math.floor(ev.x / TILE_W), TILES_PER_LINE - 1);
+	let row = ceil(Math.floor(ev.y / TILE_H), TILES_PER_LINE - 1);
 	if (!board.play(col, row, turn)) return;
 	if (checkWin() || checkTie()) return;
 	turn = (turn + 1) % TURN_SYMBOLS.length;
@@ -57,7 +58,6 @@ function checkTie() {
 function checkWin() {
 	let s = board.checkWinner();
 	if (s != -1) {
-		console.log(s);
 		alert("Player " + (s + 1) + " won!");
 		resetGame();
 		return 1;
@@ -70,6 +70,5 @@ function resetGame() {
 	board.reset();
 	updateBoard(board);
 }
-
 
 drawBoard();
