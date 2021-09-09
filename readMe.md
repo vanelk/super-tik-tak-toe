@@ -8,4 +8,4 @@ An implementation of the tik-tak-toe game on an n by n board.
 - Online Mode.
 - Improved User Interface.
 ## Demo
-[Comming soon](https://vanelk.github.io/super-tik-tak-toe/)
+[Available here](https://vanelk.github.io/super-tik-tak-toe/)
