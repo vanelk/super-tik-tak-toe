@@ -6,34 +6,52 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Super tic-tac-toe</title>
+	<link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+		integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+	<link rel="stylesheet" href="./css/style.css">
 </head>
 
 <body>
-	<canvas width="400" height="400" id="canvas"></canvas>
-	<form>
-		<br>
-		<label>Game mode</label>
-		<div>
-			<input name="mode" value="1" checked type="radio">1 Player (Vs AI)</input><br>
-			<input name="mode" value="2" type="radio">2 Players (Local)</input><br>
-			<!--Comming soon
-				<input name="mode" value="3" type="radio">2 Players (Multiplayer)</input><br>-->
+	<div class="game-container">
+		<div class="top-right-div">
+			<button class="btn-icon" id="settings-btn">
+				<i id="cog-icon" class="fas fa-cog"></i>
+			</button>
 		</div>
-		<br>
-		<label>Board Size</label>
-		<div>
-			<select id="boardSize">
-				<option value="3">3x3</option>
-				<option value="4">4x4</option>
-				<option value="5">5x5</option>
-				<option value="6">6x6</option>
-				<option value="7">7x7</option>
-				<option value="8">8x8</option>
-				<option value="9">9x9</option>
-				<option value="10">10x10</option>
-			</select>
+		<form id="settings-form" class="hidden">
+			<h1>Settings</h1>
+			<label>
+				<h3>Game mode</h3>
+			</label>
+			<div>
+				<input name="mode" value="1" checked type="radio">Single Player (Vs AI)</input><br>
+				<input name="mode" value="2" type="radio">2 Players (Local)</input><br>
+				<input name="mode" value="3" type="radio">2 Players (Online)</input><br>
+				<!--Comming soon
+					<input name="mode" value="3" type="radio">2 Players (Multiplayer)</input><br>-->
+			</div>
+			<label>
+				<h3>Board Size</h3>
+			</label>
+			<div>
+				<select id="boardSize">
+					<option value="3">3x3</option>
+					<option value="4">4x4</option>
+					<option value="5">5x5</option>
+					<option value="6">6x6</option>
+					<option value="7">7x7</option>
+					<option value="8">8x8</option>
+					<option value="9">9x9</option>
+					<option value="10">10x10</option>
+				</select>
+			</div>
+		</form>
+		<canvas width="400" height="400" id="canvas"></canvas>
+		<div class="bottom-div">
+			<button class="btn" id="restart"><i class="fas fa-redo"></i> <span>Restart Game</span></button>
 		</div>
-	</form>
+	</div>
 </body>
-<script type="module" src="./js/tiktoktoe.js"></script>
+<script type="module" src="./js/main.js"></script>
+
 </html>
